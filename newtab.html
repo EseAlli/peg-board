@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Tab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&family=Permanent+Marker&display=swap">
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <header class="topbar">
+    <form id="search" class="search" role="search">
+      <input id="search-input" type="search" placeholder="Search the web" autocomplete="off" aria-label="Search the web">
+    </form>
+    <button id="add-btn" class="add-btn" type="button">+ Pin something</button>
+  </header>
+
+  <main class="frame">
+    <div id="board" class="board" aria-label="Pegboard"></div>
+    <p id="empty" class="empty" hidden>Your board is empty. Click “+ Pin something” to add your first item.</p>
+  </main>
+
+  <dialog id="editor" class="editor">
+    <form id="editor-form">
+      <h2 id="editor-heading">Pin something</h2>
+
+      <fieldset id="type-picker" class="types">
+        <legend>What is it?</legend>
+      </fieldset>
+
+      <label class="field">
+        <span class="field-label">Title</span>
+        <input id="f-title" maxlength="80" autocomplete="off">
+      </label>
+      <label class="field">
+        <span class="field-label">Text</span>
+        <textarea id="f-body" rows="5"></textarea>
+      </label>
+      <label class="field">
+        <span class="field-label">Date</span>
+        <input id="f-date" type="date">
+      </label>
+
+      <p id="f-hint" class="hint"></p>
+
+      <div class="editor-actions">
+        <button id="delete-btn" class="btn danger" type="button" hidden>Delete</button>
+        <span class="spacer"></span>
+        <button id="cancel-btn" class="btn" type="button">Cancel</button>
+        <button id="save-btn" class="btn primary" type="submit">Pin it</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="types.js"></script>
+  <script src="storage.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>
